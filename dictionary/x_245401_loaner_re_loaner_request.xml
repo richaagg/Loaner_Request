@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Loaner Request" max_length="40" name="x_245401_loaner_re_loaner_request" type="collection"/>
+    <element extends="task" label="Loaner Request" max_length="40" name="x_245401_loaner_re_loaner_request" sizeclass="1" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="3" default="santa clara" label="Depot" max_length="40" name="depot" type="string">
+            <choice>
+                <element label="New York" sequence="0" value="new york"/>
+                <element label="Santa Clara" sequence="1" value="santa clara"/>
+                <element label="Sydney" sequence="2" value="sydney"/>
+                <element label="Singapore" sequence="3" value="singapore"/>
+                <element label="London" sequence="4" value="london"/>
+                <element label="Others" sequence="5" value="others"/>
+                <element label="Buenos Aires" sequence="6" value="buenos aires"/>
+            </choice>
+        </element>
+        <element label="Requested_for" mandatory="true" max_length="32" name="required_for" reference="sys_user" type="reference"/>
+        <element label="Start Date" mandatory="true" max_length="10" name="start_date" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="b" label="Item Type" max_length="40" name="u_choice_2" type="string">
+            <choice>
+                <element label="Laptop" sequence="0" value="a"/>
+                <element label="Mobile" sequence="1" value="b"/>
+                <element label="Projector" sequence="2" value="c"/>
+            </choice>
+        </element>
+        <element label="End_Date" mandatory="true" max_length="40" name="u_glide_date_time_1" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Location to be used" max_length="40" name="u_string_1" type="string"/>
+    </element>
 </database>
